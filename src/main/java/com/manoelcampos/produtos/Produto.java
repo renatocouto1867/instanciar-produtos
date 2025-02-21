@@ -2,22 +2,18 @@ package com.manoelcampos.produtos;
 
 import java.time.LocalDate;
 
-/**
- * Produto da loja.
- * @author Manoel Campos da Silva Filho
- */
 public class Produto {
-    private long id;
-    private String codigoEan;
-    private String descricao;
-    private String marca;
-    private String modelo;
-    private double preco;
-    private LocalDate dataCadastro;
-    private LocalDate dataUltimaAtualizacao;
-    private int estoque;
-    private String categoria;
-    private String urlFoto;
+    private final long id;
+    private final String codigoEan;
+    private final String descricao;
+    private final String marca;
+    private final String modelo;
+    private final double preco;
+    private final LocalDate dataCadastro;
+    private final LocalDate dataUltimaAtualizacao;
+    private final int estoque;
+    private final String categoria;
+    private final String urlFoto;
 
     //Construtor privado para se obrigatorio o uso do builder
     private Produto(Builder builder) {
@@ -34,17 +30,49 @@ public class Produto {
         this.urlFoto = builder.urlFoto;
     }
 
-    public long getId() { return id; }
-    public String getCodigoEan() { return codigoEan; }
-    public String getDescricao() { return descricao; }
-    public String getMarca() { return marca; }
-    public String getModelo() { return modelo; }
-    public double getPreco() { return preco; }
-    public LocalDate getDataCadastro() { return dataCadastro; }
-    public LocalDate getDataUltimaAtualizacao() { return dataUltimaAtualizacao; }
-    public int getEstoque() { return estoque; }
-    public String getCategoria() { return categoria; }
-    public String getUrlFoto() { return urlFoto; }
+    public long getId() {
+        return id;
+    }
+
+    public String getCodigoEan() {
+        return codigoEan;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public LocalDate getDataCadastro() {
+        return dataCadastro;
+    }
+
+    public LocalDate getDataUltimaAtualizacao() {
+        return dataUltimaAtualizacao;
+    }
+
+    public int getEstoque() {
+        return estoque;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public String getUrlFoto() {
+        return urlFoto;
+    }
 
     @Override
     public String toString() {
@@ -69,12 +97,12 @@ public class Produto {
         private final String codigoEan; // obrigatório
         private final String descricao; // obrigatório
         private final String marca; // obrigatório
-        private String modelo;
         private final double preco; // obrigatório
         private final LocalDate dataCadastro = LocalDate.now();
+        private final String categoria; // obrigatório
+        private String modelo;
         private LocalDate dataUltimaAtualizacao;
         private int estoque = 0;
-        private final String categoria; // obrigatório
         private String urlFoto;
 
 
